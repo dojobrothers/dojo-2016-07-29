@@ -1,4 +1,4 @@
-use std::string::String;
+//use std::string::str;
 
 pub fn fac(n: i32) -> i32 {
    if n <= 1 {
@@ -8,8 +8,8 @@ pub fn fac(n: i32) -> i32 {
    }
 }
 
-pub fn i2rm(n:i32)-> String {
-    let string:String = "I";
+pub fn i2rm(n:i32)-> str {
+    let string = "I";
     
     string  
 } 
