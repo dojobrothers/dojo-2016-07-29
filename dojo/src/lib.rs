@@ -6,6 +6,10 @@ pub fn fac(n: i32) -> i32 {
    }
 }
 
+pub fn i2rm(n:i32)-> str{
+    
+} 
+
 #[cfg(test)]
 mod tests {
     #[test]
@@ -14,6 +18,10 @@ mod tests {
         assert!(::fac(1) == 1);
         assert!(::fac(3) == 6);
         assert!(::fac(5) == 120);
+    }
+    fn i2rm_test(){
+        assert_eq!(::i2rm(1), "I");
+        assert_eq!(::i2rm(5), "V");
     }
 }
 
