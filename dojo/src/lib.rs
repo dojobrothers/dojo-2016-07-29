@@ -1,5 +1,3 @@
-//use std::string::str;
-
 pub fn fac(n: i32) -> i32 {
    if n <= 1 {
      1
@@ -8,15 +6,21 @@ pub fn fac(n: i32) -> i32 {
    }
 }
 
-pub fn i2rm<'a>(n:i32)-> &'a str {
-    if n == 1{
-    "I"
-    }
-    else {
-     "V"
-    }
-      
-} 
+pub fn i2rm(n:i32) -> String {
+    if n >= 5 {
+        "V" + i2rm(n - 5)
+    } else {
+        if n == 4 {
+            "IV"
+        } else {
+            let ret = String.with_capacity(3);
+            for (i = 0; i < n; i++) {
+                ret.push("I")
+            }
+            ret
+        }
+    }  
+}  
 
 #[cfg(test)]
 mod tests {
@@ -30,6 +34,9 @@ mod tests {
     #[test]
     fn i2rm_test(){
         assert_eq!(::i2rm(1), "I");
+        assert_eq!(::i2rm(2), "II");
+        assert_eq!(::i2rm(3), "III");
+        assert_eq!(::i2rm(4), "IV");
         assert_eq!(::i2rm(5), "V");
     }
 }
