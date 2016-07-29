@@ -1,4 +1,4 @@
-use std::str;
+use std::string::String;
 
 pub fn fac(n: i32) -> i32 {
    if n <= 1 {
@@ -9,9 +9,9 @@ pub fn fac(n: i32) -> i32 {
 }
 
 pub fn i2rm(n:i32)-> String {
-    let mut string : String;
+    let string:String = "I";
     
-    return string;
+    string  
 } 
 
 #[cfg(test)]
