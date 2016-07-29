@@ -1,0 +1,6 @@
+[package]
+name = "kata"
+version = "0.1.0"
+authors = ["Felipe Lessa <felipe.lessa@gmail.com>"]
+
+[dependencies]
