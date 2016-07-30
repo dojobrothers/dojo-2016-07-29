@@ -8,15 +8,14 @@ pub fn fac(n: i32) -> i32 {
 
 pub fn i2rm(n:i32) -> String {
     if n >= 5  {
-        let x = 
-        if n == 10{
-            "X".to_string()
+        let x = if n > 10 {
+            "X".to_string() + &(i2rm(n - 10))
         }
-        else{
-            "V".to_string() 
+        else {
+            "V".to_string() + &(i2rm(n - 5)) 
         }
         
-        x + &(i2rm(n - 5))
+        return x
         
     } else {
         if n == 4 {
@@ -26,7 +25,6 @@ pub fn i2rm(n:i32) -> String {
                 "I".to_string() + &(i2rm(n-1))
             } else{
                 "".to_string()
-
             }
             
         }
