@@ -8,16 +8,21 @@ pub fn fac(n: i32) -> i32 {
 
 pub fn i2rm(n:i32) -> String {
     if n >= 5 {
-        "V" + i2rm(n - 5)
+        "V".to_string() + i2rm(n - 5)
     } else {
         if n == 4 {
-            "IV"
+            "IV".to_string()
         } else {
-            let ret = String.with_capacity(3);
-            for (i = 0; i < n; i++) {
-                ret.push("I")
+            if n>=1{
+                "I".to_string() + i2rm(n-1)
+            } else{
+                "".to_string()
+            //let ret = String.with_capacity(3);
+ //           for (i = 0; i < n; i++) {
+  //              ret.push("I")
+//            }
             }
-            ret
+            //ret
         }
     }  
 }  
