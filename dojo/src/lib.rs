@@ -7,7 +7,13 @@ pub fn fac(n: i32) -> i32 {
 }
 
 pub fn i2rm(n:i32) -> String {
-  if n>= 400 {
+  if n >= 900 {
+    "CM".to_string() + &(i2rm(n - 900))
+  }
+  else if n >= 500 {
+    "D".to_string() + &(i2rm(n - 500))
+  }
+  else if n >= 400 {
     "CD".to_string() + &(i2rm(n - 400))
   }
   else if n >= 100 {
@@ -74,6 +80,10 @@ mod tests {
     assert_eq!(::i2rm(105), "CV");
     assert_eq!(::i2rm(400), "CD");
     assert_eq!(::i2rm(401), "CDI");
+    assert_eq!(::i2rm(500), "D");
+    assert_eq!(::i2rm(574), "DLXXIV");
+    assert_eq!(::i2rm(900), "CM");
+    assert_eq!(::i2rm(1000), "M");
   }
 }
 
