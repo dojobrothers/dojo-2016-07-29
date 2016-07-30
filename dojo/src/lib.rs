@@ -7,25 +7,21 @@ pub fn fac(n: i32) -> i32 {
 }
 
 pub fn i2rm(n:i32) -> String {
-  if n >= 900 {
+  if n >= 1000 {
+    "M".to_string() + &(i2rm(n - 1000))  
+  } else if n >= 900 {
     "CM".to_string() + &(i2rm(n - 900))
-  }
-  else if n >= 500 {
+  } else if n >= 500 {
     "D".to_string() + &(i2rm(n - 500))
-  }
-  else if n >= 400 {
+  } else if n >= 400 {
     "CD".to_string() + &(i2rm(n - 400))
-  }
-  else if n >= 100 {
+  } else if n >= 100 {
     "C".to_string() + &(i2rm(n - 100))
-  }
-  else if n >= 90 {
+  } else if n >= 90 {
     "XC".to_string() + &(i2rm(n - 90))
-  }
-  else if n >= 50 {
+  } else if n >= 50 {
     "L".to_string() + &(i2rm(n - 50))
-  }
-  else if n >= 40 {
+  } else if n >= 40 {
     "XL".to_string() + &(i2rm(n - 40))
   } else if n >= 10 {
     "X".to_string() + &(i2rm(n - 10))
@@ -84,6 +80,8 @@ mod tests {
     assert_eq!(::i2rm(574), "DLXXIV");
     assert_eq!(::i2rm(900), "CM");
     assert_eq!(::i2rm(1000), "M");
+    assert_eq!(::i2rm(1001), "MI");
+    assert_eq!(::i2rm(3999), "MMMCMXCIX");
   }
 }
 
