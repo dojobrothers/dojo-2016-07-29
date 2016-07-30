@@ -8,15 +8,16 @@ pub fn fac(n: i32) -> i32 {
 
 pub fn i2rm(n:i32) -> String {
     if n >= 5  {
-        let x = if n > 10 {
+        if n >= 10 {
             "X".to_string() + &(i2rm(n - 10))
         }
         else {
+            if n == 9{
+            "IX".to_string()
+            } else {
             "V".to_string() + &(i2rm(n - 5)) 
-        }
-        
-        return x
-        
+            }
+        }  
     } else {
         if n == 4 {
             "IV".to_string()
@@ -47,6 +48,10 @@ mod tests {
         assert_eq!(::i2rm(3), "III");
         assert_eq!(::i2rm(4), "IV");
         assert_eq!(::i2rm(5), "V");
+        assert_eq!(::i2rm(6), "VI");
+        assert_eq!(::i2rm(7), "VII");
+        assert_eq!(::i2rm(8), "VIII");
+        assert_eq!(::i2rm(9), "IX");
         assert_eq!(::i2rm(10), "X");
         assert_eq!(::i2rm(11), "XI");
     }
