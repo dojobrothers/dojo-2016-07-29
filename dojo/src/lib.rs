@@ -8,13 +8,13 @@ pub fn fac(n: i32) -> i32 {
 
 pub fn i2rm(n:i32) -> String {
     if n >= 5 {
-        "V".to_string() + i2rm(n - 5)
+        "V".to_string() + &(i2rm(n - 5))
     } else {
         if n == 4 {
             "IV".to_string()
         } else {
             if n>=1{
-                "I".to_string() + i2rm(n-1)
+                "I".to_string() + &(i2rm(n-1))
             } else{
                 "".to_string()
             //let ret = String.with_capacity(3);
@@ -43,6 +43,7 @@ mod tests {
         assert_eq!(::i2rm(3), "III");
         assert_eq!(::i2rm(4), "IV");
         assert_eq!(::i2rm(5), "V");
+        assert_eq!(::i2rm(10), "X");
     }
 }
 
