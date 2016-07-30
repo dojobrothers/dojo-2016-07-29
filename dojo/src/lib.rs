@@ -7,8 +7,20 @@ pub fn fac(n: i32) -> i32 {
 }
 
 pub fn i2rm(n:i32) -> String {
-  if n == 40 {
-    "XL".to_string()
+  if n>= 400 {
+    "CD".to_string() + &(i2rm(n - 400))
+  }
+  else if n >= 100 {
+    "C".to_string() + &(i2rm(n - 100))
+  }
+  else if n >= 90 {
+    "XC".to_string() + &(i2rm(n - 90))
+  }
+  else if n >= 50 {
+    "L".to_string() + &(i2rm(n - 50))
+  }
+  else if n >= 40 {
+    "XL".to_string() + &(i2rm(n - 40))
   } else if n >= 10 {
     "X".to_string() + &(i2rm(n - 10))
   } else if n == 9 {
@@ -55,6 +67,13 @@ mod tests {
     assert_eq!(::i2rm(50), "L");
     assert_eq!(::i2rm(59), "LIX");
     assert_eq!(::i2rm(63), "LXIII");
+    assert_eq!(::i2rm(90), "XC");
+    assert_eq!(::i2rm(99), "XCIX");
+    assert_eq!(::i2rm(100), "C");
+    assert_eq!(::i2rm(101), "CI");
+    assert_eq!(::i2rm(105), "CV");
+    assert_eq!(::i2rm(400), "CD");
+    assert_eq!(::i2rm(401), "CDI");
   }
 }
 
